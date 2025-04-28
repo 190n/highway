@@ -332,8 +332,10 @@ HWY_DLLEXPORT HWY_NORETURN void HWY_FORMAT(3, 4)
 
 #endif  // HWY_HEADER_ONLY
 
+#if !defined(HWY_WARN)
 #define HWY_WARN(format, ...) \
   ::hwy::Warn(__FILE__, __LINE__, format, ##__VA_ARGS__)
+#endif
 
 #define HWY_ABORT(format, ...) \
   ::hwy::Abort(__FILE__, __LINE__, format, ##__VA_ARGS__)
